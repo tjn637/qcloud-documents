@@ -108,22 +108,23 @@ TUICallKit 是基于腾讯云 [即时通信 IM](https://cloud.tencent.com/docume
 ![](https://qcloudimg.tencent-cloud.cn/raw/1105c3c339be4f71d72800fe2839b113.png)
 2. 单击刚刚创建出的应用，进入**基本配置**页面，并在页面的右下角找到**开通腾讯实时音视频服务**功能区，单击**免费体验**即可开通 TUICallKit 的 7 天免费试用服务。
 ![](https://qcloudimg.tencent-cloud.cn/raw/667633f7addfd0c589bb086b1fc17d30.png)
-3. 在同一页面找到 **SDKAppID** 和**密钥**并记录下来，它们会在后续的[步骤四：登录 TUI 组件](#step4)中被用到。
+1. 在同一页面找到 **SDKAppID** 和**密钥**并记录下来，它们会在后续中被用到。
 ![](https://qcloudimg.tencent-cloud.cn/raw/e435332cda8d9ec7fea21bd95f7a0cba.png)
     - SDKAppID：IM 的应用 ID，用于业务隔离，即不同的 SDKAppID 的通话彼此不能互通；
     - Secretkey：IM 的应用密钥，需要和 SDKAppID 配对使用，用于签出合法使用 IM 服务的鉴权用票据 UserSig，我们会在接下来的步骤五中用到这个 Key。
 
 ## 步骤二：下载并导入 SDK 到项目中
-- 通过集成 TUICallEngine，您可以通过对方 userID 直接拨打一个 1v1 通话，也可以以 C2C 的方式实现群组通话。
-
-- 需要手动安装依赖 [trtc-js-sdk](https://www.npmjs.com/package/trtc-js-sdk) 和 [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk) 以及 [tsignaling](https://www.npmjs.com/package/tsignaling)。
+通过集成 TUICallEngine，您可以通过对方 userID 直接拨打一个 1v1 通话，也可以以 C2C 的方式实现群组通话。
 
 ### NPM 集成
 
-```javascript
-// 为了减小 tuicallengine.js 的体积，避免和接入侧已使用的 trtc-js-sdk 和 tim-js-sdk 以及 tsignaling 发生版本冲突
-// trtc-js-sdk 和 tim-js-sdk 以及 tsignaling 不再被打包到 tuicallengine.js，在使用前您需要手动安装依赖。
+安装依赖地址： 
+- [trtc-js-sdk](https://www.npmjs.com/package/trtc-js-sdk) 
+- [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk) 
+- [tsignaling](https://www.npmjs.com/package/tsignaling)
+- [tuicall-engine-webrtc](https://www.npmjs.com/package/tuicall-engine-webrtc)
 
+```javascript
 npm i trtc-js-sdk --save
 npm i tim-js-sdk --save
 npm i tsignaling --save
@@ -132,6 +133,13 @@ npm i tuicall-engine-webrtc --save
 import { TUICallEngine, TUICallEvent, TUICAllType } from "tuicall-engine-webrtc"
 ```
 ### Script 集成
+
+下载地址：
+- [trtc-js-sdk](https://web.sdk.qcloud.com/component/trtccalling/download/trtc-js-sdk.zip) 
+- [tim-js-sdk](https://web.sdk.qcloud.com/component/trtccalling/download/tim-js-sdk.zip) 
+- [tsignaling](https://web.sdk.qcloud.com/component/trtccalling/download/tsignaling.zip)
+- [tuicall-engine-webrtc](https://web.sdk.qcloud.com/component/trtccalling/download/tuicall-engine-webrtc.zip)
+
 ```javascript
 // 如果您通过 script 方式使用 trtc-calling-js，需要按顺序先手动引入 trtc.js
 <script src="./trtc.js"></script>
@@ -161,7 +169,7 @@ let tuiCallEngine = TUICallEngine.createInstance(options);
 - tim：非必填项，若您没有，将会由内部代码自动创建。
 
 
-## 步骤四：进行登录与事件监听
+## 步骤四：登录
 ```javascript
 tuiCallEngine.login({  // 登陆事件
     userID,
