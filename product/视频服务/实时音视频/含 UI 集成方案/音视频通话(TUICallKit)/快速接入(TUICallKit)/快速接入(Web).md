@@ -130,7 +130,7 @@ npm i tim-js-sdk --save
 npm i tsignaling --save
 npm i tuicall-engine-webrtc --save
 
-import { TUICallEngine, TUICallEvent, TUICAllType } from "tuicall-engine-webrtc"
+import { TUICallEngine, TUICallEvent } from "tuicall-engine-webrtc"
 ```
 ### Script 集成
 
@@ -153,7 +153,7 @@ import { TUICallEngine, TUICallEvent, TUICAllType } from "tuicall-engine-webrtc"
 // 最后再手动引入 tuicallengine.js
 <script src="./tuicall-engine-webrtc.js"></script>
 
-const { TUICallEngine, TUICallEvent, TUICAllType } = window['tuicall-engine-webrtc']
+const { TUICallEngine, TUICallEvent } = window['tuicall-engine-webrtc']
 ```
 
 ## 步骤三：创建 TUICallEngine 对象
