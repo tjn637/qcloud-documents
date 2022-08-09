@@ -29,6 +29,8 @@ TUICallKit createInstance(Context context)
 ```java
 void setSelfInfo(String nickname, String avatar, TUICommonDefine.Callback callback)
 ```
+参数如下表所示：
+
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | nickname | String | 目标用户的昵称 |
@@ -56,6 +58,7 @@ void setSelfInfo(String nickname, String avatar, TUICommonDefine.Callback callba
 ```java
 void groupCall(String groupId, List<String> userIdList, TUICallDefine.MediaType callMediaType) {
 ```
+参数如下表所示：
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
@@ -71,6 +74,7 @@ void groupCall(String groupId, List<String> userIdList, TUICallDefine.MediaType 
 ```java
 void joinInGroupCall(TUICommonDefine.RoomId roomId, String groupId, TUICallDefine.MediaType callMediaType, TUICommonDefine.Callback callback);
 ```
+参数如下表所示：
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|

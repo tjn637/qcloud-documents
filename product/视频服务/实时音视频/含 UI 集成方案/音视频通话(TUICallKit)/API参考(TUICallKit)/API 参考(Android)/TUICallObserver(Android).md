@@ -61,6 +61,8 @@ void onCallReceived(String callerId, List<String> calleeIdList, boolean isGroupC
 ```java
 void onCallCancelled(String callerId);
 ```
+参数如下表所示：
+
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | callerId | String | 取消用户的 ID|
@@ -71,6 +73,9 @@ void onCallCancelled(String callerId);
 ```java
 void onCallBegin(TUICommonDefine.RoomId roomId, TUICallDefine.MediaType callMediaType, TUICallDefine.Role callRole);
 ```
+
+参数如下表所示：
+
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | roomId | TUICommonDefine.RoomId | 此次通话的音视频房间 Id，目前仅支持数字房间号，后续版本会支持字符串房间号 |
@@ -83,6 +88,8 @@ void onCallBegin(TUICommonDefine.RoomId roomId, TUICallDefine.MediaType callMedi
 ```java
 void onCallEnd(TUICommonDefine.RoomId roomId, TUICallDefine.MediaType callMediaType, TUICallDefine.Role callRole, long totalTime);
 ```
+参数如下表所示：
+
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | roomId | TUICommonDefine.RoomId | 此次通话的音视频房间 Id，目前仅支持数字房间号，后续版本会支持字符串房间号 |
@@ -127,6 +134,7 @@ void onUserNoResponse(String userId);
 ```
 
 参数如下表所示：
+
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | String | 无响应用户的 ID |
@@ -138,6 +146,7 @@ void onUserNoResponse(String userId);
 void onUserLineBusy(String userId);
 ```
 参数如下表所示：
+
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | String | 忙线用户的 ID |
@@ -149,6 +158,7 @@ void onUserLineBusy(String userId);
 void onUserJoin(String userId);
 ```
 参数如下表所示：
+
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | String | 加入当前通话的用户 ID |
@@ -160,6 +170,7 @@ void onUserJoin(String userId);
 void onUserLeave(String userId);
 ```
 参数如下表所示：
+
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | String | 离开当前通话的用户 ID |
@@ -211,6 +222,8 @@ void onUserVoiceVolumeChanged(Map<String, Integer> volumeMap);
 ```java
 void onUserNetworkQualityChanged(List<TUICallDefine.NetworkQualityInfo> networkQualityList);
 ```
+参数如下表所示：
+
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| networkQualityList | TUICallDefine.NetworkQualityInfo | 网络状态，根据每个 userId 可以获取对应用户当前的网络质量 |
+| networkQualityList | List | 网络状态，根据每个 userId 可以获取对应用户当前的网络质量 |
